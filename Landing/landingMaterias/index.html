@@ -1,0 +1,340 @@
+  <!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--Scripts-->
+  <script src="../aws-sdk-2.108.0.min.js"></script>
+  <script src="../aws-cognito-sdk.min.js"></script>
+  <script src="../amazon-cognito-identity.min.js"></script>
+  <script src="../constants.js"></script>
+  <script src="../cognito.js"></script>
+  <script src="../index.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <title>Yo sí saco 10</title>
+</head>
+<body>
+
+    <input type="hidden" id="currentSubject">
+    
+    <input type="hidden" id="currentTema">
+    
+    <input type="hidden" id="currentData">
+    
+    <script>
+
+        getCurrentUser(currentUserCompletionHandler, currentUserErrorHandler);
+
+    </script>
+
+
+  <div class="container-fluid img" id="blueStuff">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">
+    <img src="logo.svg" width="100" height="60" alt="">
+  </a>
+    <a class="navbar-brand white" href="#">Yo sí saco 10</a>
+    <button class="navbar-toggler white2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon white2"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link white" href="#" onclick="loadInicio()">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link white" href="#" onclick="loadMaterias()">Materias</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link white" href="#">Contacto</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Perfil
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item nav-link disabled pl-2" href="#">Editar Perfil</a>
+            <a class="dropdown-item nav-link disabled pl-2" href="#">Mis Materias</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Ayuda</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a class="nav-link white" href="#" onclick="signOut()"> Cerrar Sesión</a>
+      </li>
+    </ul>
+    </div>
+  </nav>
+
+  <div class="row mt-5 mb-3" id="userPhotoDiv">
+    <div class="photo" id="userPhoto">
+
+    </div>
+
+  </div>
+
+  <div class="row justify-content-center align-items-center" id="userNameDiv">
+    <h1 class="white pt-3 font-weight-light" id="userHello">¡Hola, Username!</h1>
+
+  </div>
+
+  </div>
+
+  <div class="container-fluid" id="sectionMaterias">
+    <div class="row justify-content-center">
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2 ">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+      </div>
+
+
+
+
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+      </div>
+
+
+
+
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Materia</h3>
+
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+
+  <div class="container" id="sectionTemas">
+    <div class="row">
+      <div class="">
+        <h1 class="pb-5" id="subjectHeader">Titulo materia</h1>
+
+      </div>
+
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Tema 1</h3>
+
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Tema 2</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Tema 3</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2 ">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Tema 4</h3>
+
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+  <div class="container" id="sectionContenidos">
+    <div class="row">
+      <div class="">
+        <h1 class=" pt-5 pb-5" id="subjectHeader">Titulo Tema</h1>
+
+      </div>
+
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Contenido 1</h3>
+
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Contenido 2</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Contenido 3</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2 ">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Contenido 4</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2 ">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Contenido 5</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2 ">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Contenido 6</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2 ">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Contenido 7</h3>
+
+      </div>
+
+      <div class="col-9 col-lg-2 ">
+        <img src="atom.svg" class="icon">
+
+        <h3 class="text-center font-weight-normal">Contenido 8</h3>
+
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+    
+  <div class="container" id="sectionRender">
+      
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>

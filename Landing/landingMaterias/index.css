@@ -1,0 +1,142 @@
+.img {
+  height: 100% !important;
+  width: 100%;
+  background-image: url("waves.png");
+  background-image: url("waves.png"), linear-gradient(to top right, #00C0F7, #1282DD);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: 300px) and (max-width: 700px){
+  .img {
+    height: 100% !important;
+    width: 100%;
+    background-image: url("waves.png");
+    background-image: url("waves.png"), linear-gradient(to top right, #00C0F7, #1282DD);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+}
+
+@media (min-width: 700px) and (max-width: 1200px){
+  .img {
+    height: 100% !important;
+    width: 100%;
+    background-image: url("waves.png");
+    background-image: url("waves.png"), linear-gradient(to top right, #00C0F7, #1282DD);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+}
+
+.white {
+  color: white !important;
+}
+
+.white2 {
+  background-color: white !important;
+}
+
+
+.photo {
+  width: 250px;
+  height: 250px;
+  border-radius:300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("photo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.icon {
+  height: 30% !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+  margin-bottom: 20%;
+}
+
+#sectionMaterias{
+
+    display: none;
+
+}
+
+#sectionTemas{
+
+    display: none;
+
+}
+
+#sectionContenidos{
+
+    display: none;
+
+}
+
+/*Render content stuff: (IÑAKI do your magic here)*/
+
+#sectionRender{
+
+
+
+}
+
+.contentImage{
+
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.contentVideo{
+    margin-left: 25%;
+    margin-right: auto;
+}
+
+.contentPDF{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  height: 800px;
+
+
+}
+
+.route {
+  color: darkgray;
+  text-decoration: none;
+}
+
+
+.route:hover {
+  color: deepskyblue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#blueStuff{
+    
+    height: 100% !important;
+    
+}
+
+.headerNav{
+    
+    font-size: 2em;
+    margin-bottom: 2em;
+    margin-top: 1em;
+    
+}

@@ -1,0 +1,179 @@
+  <!doctype html>
+<html lang="es">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <!--Scripts-->
+  <script src="aws-sdk-2.108.0.min.js"></script>
+  <script src="aws-cognito-sdk.min.js"></script>
+  <script src="amazon-cognito-identity.min.js"></script>
+  <script src="constants.js"></script>
+  <script src="cognito.js"></script>
+  <script src="index.js"></script>
+    
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" type="text/css" href="normalize.css" />
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="demo.css" />
+  <link rel="stylesheet" type="text/css" href="set1.css" />
+  <title>Yo Si Saco 10</title>
+</head>
+<body>
+    
+  <div class="container-fluid img">
+    <div class="row justify-content-center align-items-center position-sticky">
+      <div class="col-lg-5 col-12">
+        <h1 class="white pl-5 pl-md-0">Yo si saco 10</h1>
+
+      </div>
+      <div class="col-lg-5 col-12">
+        <ul class="list-inline white">
+          <li class="list-inline-item pt-3">Información</li>
+          <li class="list-inline-item pt-3 pl-2 pl-md-2 pl-lg-5">Contacto</li>
+          <li class="list-inline-item pt-3 pl-2 pl-md-2 pl-lg-5">Iniciar sesión</li>
+
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="row ml-3 ml-lg-5">
+      <div class="b-info col-12 col-md-6 d-block">
+        <p class="white f-size">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio itaque, possimus, temporibus similique recusandae reiciendis voluptatum repellat sunt nemo inventore.</p>
+        <button class="more" type="button" name="button">Más Información</button>
+      </div>
+      <div class="col-12 col-lg-6">
+        <img class="logo" src="logo.svg" alt="">
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row mt-5 mb-5">
+        <div class="col-12 col-lg-6">
+          <img class="log-img" src="log.png" alt="">
+
+        </div>
+
+        <div class="input-group col-12 col-lg-6 d-block">
+          <h2 class="log">Iniciar Sesión</h2>
+
+          <span class="input input--hoshi">
+            <input class="input__field input__field--hoshi" type="email" required id="userMail" />
+            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="userMail">
+              <span class="input__label-content input__label-content--hoshi">Correo</span>
+            </label>
+          </span>
+          <span class="input input--hoshi">
+            <input class="input__field input__field--hoshi" type="password" id="userPassword" />
+            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="userPassword">
+              <span class="input__label-content input__label-content--hoshi">Contraseña</span>
+            </label>
+          </span>
+          <input type="submit" class="more2" name="" value="Iniciar Sesión" onclick="loginUI(event)">
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container-fluid contact">
+    <div class="container">
+      <div class="row mb-5 mt-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <h2 class="contact-h1">Contacto</h2>
+          <p class="contact-p">+52 1 (55) 56441801</p>
+          <p class="contact-p">example@mail.com</p>
+          <p class="contact-p">04320, Moctezuma 108, Romero de Terreros, Ciudad de México, CDMX</p>
+
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <iframe class="map" src="https://snazzymaps.com/embed/79482" width="95%" height="300px" style=""></iframe>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid foot">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <p class="foot-p"> &copy;2018 Yo si saco 10 All Rights Reserved. </p>
+
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <p class="foot-p2">Powered by: <a href="#">Chesse Turtle</a></p>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="classie.js"></script>
+  <script>
+    (function() {
+      // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+      if (!String.prototype.trim) {
+        (function() {
+          // Make sure we trim BOM and NBSP
+          var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+          String.prototype.trim = function() {
+            return this.replace(rtrim, '');
+          };
+        })();
+      }
+
+      [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+        // in case the input is already filled..
+        if( inputEl.value.trim() !== '' ) {
+          classie.add( inputEl.parentNode, 'input--filled' );
+        }
+
+        // events:
+        inputEl.addEventListener( 'focus', onInputFocus );
+        inputEl.addEventListener( 'blur', onInputBlur );
+      } );
+
+      function onInputFocus( ev ) {
+        classie.add( ev.target.parentNode, 'input--filled' );
+      }
+
+      function onInputBlur( ev ) {
+        if( ev.target.value.trim() === '' ) {
+          classie.remove( ev.target.parentNode, 'input--filled' );
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
