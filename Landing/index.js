@@ -308,6 +308,8 @@ function buildTemas(datax){
 
         }else{
 
+            document.getElementById("sectionTemas").innerHTML = "<div class='noContentDiv'><img class='emptyImage' src='noContent.svg'><h3 class='noContentTitle'>No hay contenido por el momento</h3></div>"
+            
         }
 
 }
@@ -411,6 +413,11 @@ function buildContent(data){
 
         }else{
 
+            var currentSubject = document.getElementById("currentSubject").value;
+            var currentTema = document.getElementById("currentTema").value;
+            
+            document.getElementById("sectionContenidos").innerHTML = "<h1 class='headerNav'><span class='route' onclick='loadTemas()'>"+ currentSubject.split('+').join(' ') +"</span> > <span>"+ currentTema.split('+').join(' ') +"</span></h1><div class='noContentDiv'><img class='emptyImage' src='noContent.svg'><h3 class='noContentTitle'>No hay contenido por el momento</h3></div>"
+            
         }
     
 }
