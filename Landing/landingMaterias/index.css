@@ -1,5 +1,5 @@
 .img {
-  height: 100% !important;
+  height: 100%;
   width: 100%;
   background-image: url("waves.png");
   background-image: url("waves.png"), linear-gradient(to top right, #00C0F7, #1282DD);
@@ -10,7 +10,7 @@
 
 @media (min-width: 300px) and (max-width: 700px){
   .img {
-    height: 100% !important;
+    height: 100%;
     width: 100%;
     background-image: url("waves.png");
     background-image: url("waves.png"), linear-gradient(to top right, #00C0F7, #1282DD);
@@ -23,7 +23,7 @@
 
 @media (min-width: 700px) and (max-width: 1200px){
   .img {
-    height: 100% !important;
+    height: 100%;
     width: 100%;
     background-image: url("waves.png");
     background-image: url("waves.png"), linear-gradient(to top right, #00C0F7, #1282DD);
@@ -50,7 +50,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("photo.jpg");
+  background-image: url("profile.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -128,17 +128,17 @@
 }
 
 #blueStuff{
-
-    height: 100% !important;
-
+    
+    height: 100%;
+    
 }
 
 .headerNav{
-
+    
     font-size: 2em;
     margin-bottom: 2em;
     margin-top: 1em;
-
+    
 }
 
 .noContentDiv{
