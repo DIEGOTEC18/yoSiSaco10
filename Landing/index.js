@@ -69,7 +69,9 @@ function loadInicio(){
     document.getElementById("sectionContenidos").style.display = "none";
     document.getElementById("sectionRender").style.display = "none";
     
-    document.getElementById("blueStuff").style.height = "1000px !important";
+    document.getElementById("blueStuff").style.height = "2500px !important";
+    
+    document.getElementById("feed").style.display = "block";
     
 }
 
@@ -86,6 +88,8 @@ function loadMaterias(){
     scanMaterias("yoSiSaco10_data");
     
     document.getElementById("blueStuff").style.height = "10% !important";
+    
+    document.getElementById("feed").style.display = "none";
 
 }
 
@@ -142,6 +146,12 @@ function headMenuSelector(){
     
     document.getElementById("sectionContenidos").style.display = "block";
     document.getElementById("sectionRender").style.display = "none";
+    
+}
+
+function loadContacto(){
+    
+    window.location = "/index.html";
     
 }
 
