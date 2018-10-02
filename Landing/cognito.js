@@ -260,7 +260,11 @@ function currentUserCompletionHandler() {
 
 function currentUserErrorHandler() {
     console.log("Entra current user error handler");
+    console.log(window.location);
+    if(window.location.href != "https://www.yosisaco10.com/index.html"){
+    console.log("Entra el redirect");
     window.location = "/index.html";
+    }
     //openModalLi();
 
 }
