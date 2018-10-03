@@ -16,9 +16,33 @@ function createUserUI(event) {
   var userType = event.path[1].childNodes[15].childNodes[3].firstElementChild.childNodes[0].data;
   var password = document.getElementById("createUserPassword").value;
     
+  //Incert user content access here:
+  
+  var realUserType;
+    
+  if(userType == "Maestro"){
+      
+      realUserType = "Maestro";
+      
+  } else{
+      
+      console.log(currentUserCAccess);
+      
+      realUserType = "Alumno";
+      
+      for(var i = 0; i < currentUserCAccess.length; i++){
+          
+          console.log(currentUserCAccess[i]);
+          
+          realUserType += "#" + currentUserCAccess[i];
+          
+      }
+      
+  }
+    
   if(name != "" && email != ""){     
 
-  createUser({"name": name, "email": email, "password": password, "grade": grade, "country": country, "city": city, "school": school, "userType": userType}, function () {
+  createUser({"name": name, "email": email, "password": password, "grade": grade, "country": country, "city": city, "school": school, "userType": realUserType}, function () {
     
     closeModalCUser();
     
