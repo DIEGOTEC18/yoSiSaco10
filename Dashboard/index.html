@@ -32,6 +32,8 @@
     <input type="hidden" id="currentContentType">
 
     <input type="hidden" id="currentTema">
+    
+    <input type="hidden" id="currentUserCType">
 
   <div class="scroll-box">
     <nav>
@@ -162,9 +164,9 @@
         	<span>Tipo de usuario</span>
         	<div id="img_category"class="psuedo_select"name="img_category">
         		<span class="selected" id="selectTypeUser"></span>
-        		<ul id="img_category_options"class="options">
-        			<li class="option"data-value="commercial">Alumno</li>
-        			<li class="option"data-value="residential">Maestro</li>
+        		<ul id="img_category_options"class="options" onclick="userTypeSelector(event)">
+        			<li class="option"data-value="Alumno">Alumno</li>
+        			<li class="option"data-value="Maestro">Maestro</li>
         		</ul>
         	</div>
         </label>
@@ -174,6 +176,20 @@
           <span class="fake-btn">Elegir archivo</span>
           <span class="file-msg">o bien arrstra el archivo</span>
             <input class="file-input" type="file" multiple>
+        </div>
+        
+        <div id="selectAccessDiv">
+        <p class="accessTitle">Acceso a contenido:</p>
+        <div class="" id="selectAccessZone">
+            <label><input type='checkbox' value='todo' onclick="selectContentDisplay(event);" id="todoCheck">Todo</label><br>
+            
+            <hr class="horizontalLine">
+            
+            <div class='' id='selectContentAccess'>
+                <label><input type='checkbox' id='' value=''></label><br>
+            </div>
+            
+        </div>
         </div>
 
         <button type="button" class="more3" onclick="createUserUI(event)">Crear Usuario</button>

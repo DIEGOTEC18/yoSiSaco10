@@ -116,14 +116,16 @@ function putObjectDynamo(item, table, completionHandler) {
 function openModalCUser() {
   var modal = document.getElementById("modal-create-user");
 
-  modal.style.display = "block"
+  modal.style.display = "block";
+    
+  scanMaterias("yoSiSaco10_data", buildUserAccess);
 
 }
 
 function closeModalCUser() {
   var modal = document.getElementById("modal-create-user");
 
-  modal.style.display = "none"
+  modal.style.display = "none";
 
 }
 
@@ -187,7 +189,7 @@ function loadDashMaterias(){
     document.getElementById("dash-a").style.display = "none";
     document.getElementById("sectionMaterias").style.display = "block";
 
-    scanMaterias("yoSiSaco10_data");
+    scanMaterias("yoSiSaco10_data", buildMaterias);
 
     }
 
@@ -297,12 +299,14 @@ function buildUsers(data){
                         console.log(data[ix].profilePic.S);
 
                         var backPic = "userPhoto" + ix;
+                          
+                        var userRealName = data[ix].name.S;
 
                         if(data[ix].profilePic.S != "noProfilePic"){
 
                             console.log("Entra a si hay foto");
 
-                            html += "<div class='alumno' onclick='buildUsersInfo("+ ix +")'><div class='datos'><h4>"+ data[ix].userType.S +":</h4><h2>"+ data[ix].name.S +"</h2><h3>"+ data[ix].email.S +"</h3><h3>"+ data[ix].grade.S +"</h3></div><div class='line'></div><div class='photo' id="+ backPic +"></div></div>";
+                            html += "<div class='alumno' onclick='buildUsersInfo("+ ix +")'><div class='datos'><h4>"+ data[ix].userType.S.substring(0, 7).replace('#', '') +":</h4><h2>"+ userRealName +"</h2><h3>"+ data[ix].email.S +"</h3><h3>"+ data[ix].grade.S +"</h3></div><div class='line'></div><div class='photo' id="+ backPic +"></div></div>";
 
                             userPicIds.push(backPic);
                             userPicList.push(data[ix].profilePic.S);
@@ -313,7 +317,7 @@ function buildUsers(data){
 
                             console.log("Entra a no hay foto");
 
-                            html += "<div class='alumno' onclick='buildUsersInfo("+ ix +")'><div class='datos'><h4>"+ data[ix].userType.S +":</h4><h2>"+ data[ix].name.S +"</h2><h3>"+ data[ix].email.S +"</h3><h3>"+ data[ix].grade.S +"</h3></div><div class='line'></div><div class='photo'></div></div>";
+                            html += "<div class='alumno' onclick='buildUsersInfo("+ ix +")'><div class='datos'><h4>"+ data[ix].userType.S.substring(0, 7).replace('#', '') +":</h4><h2>"+ userRealName +"</h2><h3>"+ data[ix].email.S +"</h3><h3>"+ data[ix].grade.S +"</h3></div><div class='line'></div><div class='photo'></div></div>";
 
                         }
 
@@ -404,21 +408,21 @@ function crearMateria(){
 function completionHandlerCrearMateria(){
 
     console.log("Se llama el completion Handler");
-    scanMaterias("yoSiSaco10_data");
+    scanMaterias("yoSiSaco10_data", buildMaterias);
     closeModalMaterias();
 
 }
 
 //Subjects Display:
 
-function scanMaterias(table) {
+function scanMaterias(table, builder) {
   var parameters = {TableName: table};
   var dynamodb = new AWS.DynamoDB();
   dynamodb.scan(parameters, function (error, data) {
     if (error) {
       console.log(error);
     } else {
-      buildMaterias(data.Items);
+      builder(data.Items);
     }
   });
 }
@@ -1157,6 +1161,89 @@ function buildUsersInfo(userNumber){
     
 }
 
+
+function selectContentDisplay(){
+    
+    var checkbox = document.getElementById("todoCheck").checked;
+    
+    if(checkbox == true){
+        
+        document.getElementById("selectContentAccess").style.display = "none";
+        
+    } else{
+        
+        document.getElementById("selectContentAccess").style.display = "block";
+        
+    }
+    
+}
+
+function buildUserAccess(data){
+    
+    console.log(data);
+    
+    var zone = document.getElementById("selectContentAccess");
+    var html = "";
+    
+    for(var i = 0; i < data.length; i++){
+        
+     var subjectName = data[i].subjectName.S;
+     var theFunction = "contentRestrictSelector('" + subjectName + "')";
+        
+     html += "<label><input type='checkbox' id='"+ data[i].subjectName.S +"' value='"+ data[i].subjectName.S +"' onclick=" + theFunction + ">"+ data[i].subjectName.S.split('+').join(' ') +"</label><br>";   
+        
+    } 
+    
+    zone.innerHTML = html;
+}
+
+function userTypeSelector(event){
+    
+    var userType = event.path[0].innerHTML;
+    console.log(userType);
+    
+    if(userType == "Alumno"){
+       
+       document.getElementById("selectAccessDiv").style.display = "block";
+       
+       } else{
+           
+           document.getElementById("selectAccessDiv").style.display = "none";
+           
+           document.getElementById("currentUserCType").value = "userType";
+           
+       }
+    
+}
+
+var currentUserCAccess = [];
+function contentRestrictSelector(id){
+    
+    console.log(id);
+    console.log(document.getElementById(id).checked);
+    
+    if(document.getElementById(id).checked == true){
+        
+        console.log(id);
+        
+        currentUserCAccess.push(id);
+        
+    }
+    
+    if(document.getElementById(id).checked == false){
+        
+        var index = currentUserCAccess.indexOf(id);
+        if (index !== -1) {
+            currentUserCAccess.splice(index, 1);
+        }
+        
+        console.log("se quita");
+        
+    }
+    
+    console.log(currentUserCAccess);
+    
+}
 
 
 var ALERT_TITLE = "Confirmar";

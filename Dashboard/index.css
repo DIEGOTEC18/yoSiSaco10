@@ -509,6 +509,22 @@ button {
   margin-left: 1em;
 }
 
+.accessTitle {
+  color: #6a7989;
+  font-size: 1.2em;
+  margin-left: 1em;
+}
+
+.horizontalLine {
+    
+}
+
+#selectAccessDiv {
+    
+    display: none;
+    
+}
+
 .modal-input {
   display: block;
   margin-left: auto;
