@@ -277,6 +277,29 @@ function createUser(data, completionHandler) {
         }
         console.log(profilePic);
         
+        console.log("Current User Access:-->")
+        console.log(currentUserCAccess);
+        
+        var realUserAccess = [];
+        
+        if(currentUserCAccess.length != 0){
+        
+        for(var i = 0; i < currentUserCAccess.length; i++){
+            
+            realUserAccess.push({"S": currentUserCAccess[i]});
+            
+        }
+        } else{
+            
+            if(data.userType.includes("Maestro") || data.userType.includes("Alumno#Todo")){
+                realUserAccess.push({"S": "TODO"});
+            } else{
+                
+                realUserAccess.push({"S": "No tiene acceso a contenidos"});
+                
+            }
+        }
+        
         var item = {
             
                     "city": {"S": data.city},
@@ -286,7 +309,8 @@ function createUser(data, completionHandler) {
                     "name": {"S": data.name},
                     "school": {"S": data.school},
                     "userType": {"S": data.userType},
-                    "profilePic": {"S": profilePic}
+                    "profilePic": {"S": profilePic},
+                    "userAccess": {"L": realUserAccess}
         };
         
         putObjectDynamo(item, "yoSiSaco10_users", function (){console.log("Usuario Registrado en DynamoDB"); scanUsers("yoSiSaco10_users");});
