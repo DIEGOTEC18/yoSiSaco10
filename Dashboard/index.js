@@ -104,6 +104,7 @@ function putObjectDynamo(item, table, completionHandler) {
     if (error) {
       console.log("Si entra a Error");
       alert(error);
+      console.log(error);
    } else {
      console.log("Si entra a Data");
      console.log(data);
@@ -1158,6 +1159,14 @@ function buildUsersInfo(userNumber){
     document.getElementById("displayUserCountry").innerHTML = userData.country.S;
     document.getElementById("displayUserCity").innerHTML = userData.city.S;
     document.getElementById("displayUserSchool").innerHTML = userData.school.S;
+    
+    document.getElementById("userAccessDisplay").innerHTML = "";
+    
+    for(var i = 0; i < userData.userAccess.L.length; i++){
+        
+        document.getElementById("userAccessDisplay").innerHTML +="<li class='userAccessDisplay'>" + userData.userAccess.L[i].S.split('+').join(' ') + "</li>";
+        
+    }
     
 }
 
