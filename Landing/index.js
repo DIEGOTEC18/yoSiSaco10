@@ -1,5 +1,32 @@
 //Scanners and Query:
 
+function scan1(table, completionHandler, errorHandler, filters, values, names) {
+    var parameters = {TableName: table, FilterExpression: filters, ExpressionAttributeValues: values, ExpressionAttributeNames: names};
+    var dynamodb = new AWS.DynamoDB();
+    function onScan (error, data) {
+        if (error) {
+            console.log(error);
+            errorHandler(error);
+        } else {
+            console.log(data);
+            completionHandler(data.Items);
+            console.log(data.LastEvaluatedKey);
+
+            if (data.LastEvaluatedKey != undefined) {
+                console.log("Scanning for more...");
+                parameters.ExclusiveStartKey = data.LastEvaluatedKey;
+                dynamodb.scan(parameters, onScan);
+        }
+            else{
+                console.log("Nothing else to scan...");
+            }
+        }
+    }
+    dynamodb.scan(parameters, onScan);
+
+}
+
+
 function scanMaterias(table) {
   var parameters = {TableName: table};
   var dynamodb = new AWS.DynamoDB();
@@ -85,7 +112,56 @@ function loadMaterias(){
     document.getElementById("sectionContenidos").style.display = "none";
     document.getElementById("sectionRender").style.display = "none";
     
-    scanMaterias("yoSiSaco10_data");
+    console.log(userAccess);
+    
+    if(userAccess.includes("Maestro")){
+        
+        scanMaterias("yoSiSaco10_data");
+        
+    } else{
+        
+        console.log("Entra restrict alumno");
+        
+        if(userAccess.includes("Todo")){
+        
+            scanMaterias("yoSiSaco10_data");
+            
+            console.log("Entra alumno todo");
+            
+        } else{
+            
+            console.log("Entra restricted content");
+            
+            var currentAccess = userAccess.split("#");
+            
+            console.log("----");
+            console.log(currentAccess);
+            
+            var variables = {};
+
+            var filterExpression = "#subjectName IN (";
+
+            for (var i = 1; i < currentAccess.length; i++) {
+                var currentUserAccess = currentAccess[i];
+                console.log(currentUserAccess);
+
+                variables[":" + currentUserAccess.split('+').join('')] = {S: currentUserAccess};
+                filterExpression += ":" + currentUserAccess.split('+').join('');
+
+                if (i < (currentAccess.length - 1)) {
+                    filterExpression += ", ";
+                }
+            }
+            filterExpression += ")";
+
+            console.log(filterExpression);
+            console.log(variables);
+
+            scan1('yoSiSaco10_data', buildMaterias, function (){console.log("upsss");}, filterExpression, variables, {"#subjectName": "subjectName"});
+            
+        }
+        
+    }
     
     document.getElementById("blueStuff").style.height = "10% !important";
     
@@ -157,12 +233,14 @@ function loadContacto(){
 
 //Builders:
 
+var userAccess;
 function userBuilder(data){
     
     console.log(data);
     
     var userPic = data[8].Value;
     var userName = data[5].Value;
+    userAccess = data[0].Value;
     
     if(userPic != "noProfilePic"){
         
