@@ -1164,7 +1164,7 @@ function buildUsersInfo(userNumber){
 
     for(var i = 0; i < userData.userAccess.L.length; i++){
 
-        document.getElementById("userAccessDisplay").innerHTML +="<li class=''>" + userData.userAccess.L[i].S.split('+').join(' ') + "</li>";
+        document.getElementById("userAccessDisplay").innerHTML +="<li class='userAccessDisplay'>" + userData.userAccess.L[i].S.split('+').join(' ') + "</li>";
 
     }
 

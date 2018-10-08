@@ -624,10 +624,8 @@ button {
 }
 
 .userAccessDisplay {
-  font-size: 1.5em;
-  color: #848485;
   text-align: center;
-
+  list-style: inside;
 }
 
 .modal-h2::after {
