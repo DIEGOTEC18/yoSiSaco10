@@ -626,10 +626,7 @@ button {
 .userAccessDisplay {
   font-size: 1.5em;
   color: #848485;
-  max-width: 20%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 
 }
 
