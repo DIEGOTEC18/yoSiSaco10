@@ -118,7 +118,7 @@ function openModalCUser() {
   var modal = document.getElementById("modal-create-user");
 
   modal.style.display = "block";
-    
+
   scanMaterias("yoSiSaco10_data", buildUserAccess);
 
 }
@@ -155,15 +155,15 @@ function closeModalTemas(){
 }
 
 function loadModalCrearContenido(){
-    
+
     document.getElementById("modalCrearContenidos").style.display = "block";
-    
+
 }
 
 function closeModalCrearContenido(){
-    
+
     document.getElementById("modalCrearContenidos").style.display = "none";
-    
+
 }
 
 //DASH LOADERS:
@@ -223,22 +223,22 @@ function loadDashTemas(event){
 }
 
 function loadDashContenidos(event){
-    
+
     console.log(event);
-    
+
     var rawNameTema = event.path[0].id;
     document.getElementById("currentTema").value = rawNameTema;
-    
+
     document.getElementById("modalContenidos").style.display = "block";
-    
+
     scan1('yoSiSaco10_contents', buildContent, function (){console.log("upsss Scan1");}, "topic = :topic", {":topic": {S: rawNameTema}});
-    
+
 }
 
 function closeDashContenidos(){
-    
+
         document.getElementById("modalContenidos").style.display = "none";
-    
+
 }
 
 //USERS DISPLAY:
@@ -261,7 +261,7 @@ var currentUsersData;
 function buildUsers(data){
 
     console.log(data);
-    
+
     currentUsersData = data;
 
                 for (var i = 0 ; i < data.length ; i++){
@@ -300,7 +300,7 @@ function buildUsers(data){
                         console.log(data[ix].profilePic.S);
 
                         var backPic = "userPhoto" + ix;
-                          
+
                         var userRealName = data[ix].name.S;
 
                         if(data[ix].profilePic.S != "noProfilePic"){
@@ -354,7 +354,7 @@ function buildUsers(data){
 function crearMateria(){
 
     var nameMateria = document.getElementById("inputNameMateria").value;
-    
+
     if(nameMateria != ''){
 
     var replacedMateria = nameMateria.split(' ').join('+');
@@ -397,11 +397,11 @@ function crearMateria(){
         }
 
     }
-    
+
 }else{
-    
+
     alert("Necesitas asignarle un nombre a la materia que quieres crear antes de crearla.");
-    
+
 }
 
 }
@@ -496,9 +496,9 @@ function crearTema(){
     var nameMateria = document.getElementById("currentSubject").value;
 
     var rawNameTema = document.getElementById("inputNameTema").value;
-    
+
     if(rawNameTema != ''){
-    
+
     var nameTema = rawNameTema.split(' ').join('+');
     //console.log(nameTema);
 
@@ -562,11 +562,11 @@ function crearTema(){
     }
 
     allTopicNames = [];
-    
+
 }else{
-    
+
     alert("Necesitas asignarle un nombre al tema que quieres crear antes de crearlo.");
-    
+
 }
 
 }
@@ -615,7 +615,7 @@ function buildTemas(datax){
     var data = datax.Items[0].topics.L;
 
     console.log(data);
-        
+
     var main = document.getElementById("dash-t");
     var html = "<h3 id='subjectHead'></h3><div class='fila-t'>";
 
@@ -625,48 +625,48 @@ function buildTemas(datax){
                 var realI = i + 1;
 
                 console.log("Si entra build temas: " + i);
-        
+
                 if(i % 4 == 0 && i != 0){
-                    
+
                     console.log("Se agrega una fila: " + i);
-                    
+
                     html += "</div>"; //se cierra la fila anterior.
                     html += "<div class='fila-t'>"; //se abre una nueva fila.
-                    
+
                 }
-        
+
                 console.log(data[i]);
 
                 var rawTema = data[i].M.topicName.S;
                 var replacedTema = rawTema.split('+').join(' ');
-        
+
                 panelsTemas.push(rawTema); //Se agrega a panelsTemas
-        
+
                 html += "<div class='tema' id="+ rawTema +" onclick='loadDashContenidos(event)'><h4 id="+ rawTema +">"+ replacedTema +"</h4><h2 id="+ rawTema +"> Número de contenidos: 0</h2></div>";
-        
+
                 if(realI == data.length){
-                    
+
                     console.log("Se termina de agregar temas: " + i);
-                    
+
                     if(realI % 4 == 0){
-                       
+
                        console.log("Fila nueva para el +");
                        html += "</div>"; //cierra la fila.
                        html += "<div class='fila-t'><div class='add-materia' onclick='openModalTemas()'><img src='add.svg' alt=''></div></div>"; //Agrega una fila nueva con el +.
-                       
+
                     }else{
-                        
+
                         html += "<div class='add-materia' onclick='openModalTemas()'><img src='add.svg' alt=''></div>"; //agrega el modal de crear materia.
                         html += "</div>"; //cierra la fila.
-                        
+
                     }
-                    
+
                 }
-        
-                
-        
-                
-        
+
+
+
+
+
                     /*
 
                     var topicName = row.M.topicName.S;
@@ -725,11 +725,11 @@ function buildTemas(datax){
 */
 
         }
-        
+
         main.innerHTML = html;
-        
+
         document.getElementById("subjectHead").innerHTML = document.getElementById("currentSubject").value.split('+').join(' ');
-        
+
 
         }else{
 
@@ -751,193 +751,193 @@ function sleep(milliseconds) {
 //CONTENT CREATOR AND STUFF:
 
 function onChangeContentType(contentType){
-    
+
     console.log("Se llama onchange");
     console.log(contentType);
-    
+
     document.getElementById("currentContentType").value = contentType;
-    
+
     if(contentType == "pdf"){
-        
+
         document.getElementById("pdfDropArea").style.display = "block";
         document.getElementById("imageDropArea").style.display = "none";
         document.getElementById("videoLinkSpan").style.display = "none";
         document.getElementById("textBox").style.display = "none";
-        
+
     }
-    
+
     if(contentType == "text"){
-        
+
         document.getElementById("pdfDropArea").style.display = "none";
         document.getElementById("imageDropArea").style.display = "none";
         document.getElementById("videoLinkSpan").style.display = "none";
         document.getElementById("textBox").style.display = "block";
-        
+
     }
-    
+
     if(contentType == "video"){
-        
+
         document.getElementById("pdfDropArea").style.display = "none";
         document.getElementById("imageDropArea").style.display = "none";
         document.getElementById("textBox").style.display = "none";
         document.getElementById("videoLinkSpan").style.display = "block";
-        
+
     }
-    
+
     if(contentType == "image"){
-        
+
         document.getElementById("pdfDropArea").style.display = "none";
         document.getElementById("textBox").style.display = "none";
         document.getElementById("videoLinkSpan").style.display = "none";
         document.getElementById("imageDropArea").style.display = "block";
-        
+
     }
-    
+
 }
 
 function contentCreator(event){
-    
+
     var contentName = document.getElementById("inputContentName").value;
     var contentType = document.getElementById("currentContentType").value;
     var tema = document.getElementById("currentTema").value;
     var materia = document.getElementById("currentSubject").value;
     var realContentName = contentName.split(' ').join('+');
-    
+
     console.log(contentName);
     console.log(contentType);
     console.log(tema);
     console.log(materia);
-    
+
     if(contentName != ''){
-    
+
     if(contentType != ''){
-    
+
     if(contentType == "text"){
-       
+
        var htmlText = document.getElementById("textBox").value;
-        
+
        if(htmlText != ''){
-        
+
        console.log(htmlText);
-       
+
        var item = {
         "content": {"S": htmlText},
         "contentName": {"S": realContentName},
         "contentType": {"S": contentType},
         "topic": {"S": tema}
-       }; 
-        
+       };
+
        putObjectDynamo(item, "yoSiSaco10_contents", contentCreatorCompletionH);
-           
+
        }else{
-           
+
            alert("El contenido de texto no puede estar vacío.");
-           
+
        }
-       
+
     }
-    
+
     if(contentType == "video"){
-       
+
        var videoLink = document.getElementById("videoLink").value;
        console.log(videoLink);
-        
+
        var videoCode =  videoLink.substring(32);
-        
+
        var realVideoLink = "https://www.youtube.com/embed/" + videoCode + "?rel=0&amp;showinfo=0";
-        
+
        if(videoLink != ''){
-        
+
        var item = {
         "content": {"S": realVideoLink},
         "contentName": {"S": realContentName},
         "contentType": {"S": contentType},
         "topic": {"S": tema}
-       }; 
-        
+       };
+
        putObjectDynamo(item, "yoSiSaco10_contents", contentCreatorCompletionH);
-           
+
        }else{
-           
+
            alert("Necesitas proporcionar un link de video para crear contenido tipo video.");
-           
+
        }
-       
+
     }
-    
+
     if(contentType == "image"){
-        
+
         console.log($fileInput[1].files[0]);
-        
+
         if($fileInput[1].files[0] != undefined){
-        
+
         var imageName = makeid2(1);
         var imageFile = $fileInput[1].files[0];
         var imageLink = "https://s3.amazonaws.com/yosisaco10-files/" + imageName;
-        
+
         console.log(imageName);
         console.log(imageLink);
-        
+
         S3upload2(imageName, imageFile, 'yosisaco10-files');
-        
+
         var item = {
         "content": {"S": imageLink},
         "contentName": {"S": realContentName},
         "contentType": {"S": contentType},
         "topic": {"S": tema}
-       }; 
-        
+       };
+
         putObjectDynamo(item, "yoSiSaco10_contents", contentCreatorCompletionH);
-        
+
     }else{
-        
+
         alert("Necesitas seleccionar una imagen para poder crear el tipo de contenido imagen.");
-        
+
     }
     }
-        
+
         if(contentType == "pdf"){
-        
+
         console.log($fileInput[2].files[0]);
-        
+
         if($fileInput[2].files[0] != undefined){
-        
+
         var pdfName = makeid2(2);
         var pdfFile = $fileInput[2].files[0];
         var pdfLink = "https://s3.amazonaws.com/yosisaco10-files/" + pdfName;
-        
+
         console.log(pdfName);
         console.log(pdfLink);
-        
+
         pdfUpload(pdfName, pdfFile, 'yosisaco10-files');
-        
+
         var item = {
         "content": {"S": pdfLink},
         "contentName": {"S": realContentName},
         "contentType": {"S": contentType},
         "topic": {"S": tema}
-       }; 
-        
+       };
+
         putObjectDynamo(item, "yoSiSaco10_contents", contentCreatorCompletionH);
-        
+
     }else{
-        
+
         alert("Necesitas seleccionar un archivo PDF para poder crear el tipo de contenido PDF.");
-        
+
     }
     }
-        
+
 }else{
-    
+
     alert("Debes seleccionar un tipo de contenido, asignarle un nombre y subir / escribirlo para poder crearlo.");
-    
+
 }
         }else{
-            
+
             alert("Debes de asignarle un nombre a el contenido antes de poder crearlo");
-            
+
         }
-    
+
 }
 
 function S3upload2(name, fileData, bucketName) {
@@ -1010,7 +1010,7 @@ function makeid2(location) {
 
   } else{
       console.log("Entra al No document ELSE");
-      
+
       text = "noDocument";
 
   }
@@ -1019,72 +1019,72 @@ function makeid2(location) {
 }
 
 function contentCreatorCompletionH(){
-    
+
     console.log("Se llama contentCreatorCompletionH");
-    
+
     document.getElementById("inputContentName").value = '';
     document.getElementById("textBox").value = '';
     document.getElementById("videoLink").value = '';
     document.getElementById("imageDropArea").style.display = "none";
     document.getElementById("videoLinkSpan").style.display = "none";
     document.getElementById("textBox").style.display = "none";
-    
-    
-    
+
+
+
     var topic = document.getElementById("currentTema").value;
-    
+
     closeModalCrearContenido();
-    
+
     scan1('yoSiSaco10_contents', buildContent, function (){console.log("upsss Scan1");}, "topic = :topic", {":topic": {S: topic}});
 }
 
 function buildContent(data){
-    
+
     console.log("Entra buildContent");
     console.log(data);
-    
+
     var cleanNameTema = document.getElementById("currentTema").value.split("+").join(' ');
     var area = document.getElementById("contentBox");
     var html = "<span class='close-modal w3-button' onclick='closeDashContenidos()'>&times;</span><h1 id='headNombreDelTema'>Nombre del Tema</h1>";
-    
+
     for(var i = 0; i < data.length; i++){
-        
+
         var name = data[i].contentName.S;
         var contentType = data[i].contentType.S;
         var realName = name.split('+').join(' ');
-        
+
         html += "<div class='card'><h5 class='pt-3 pl-3'>"+ realName +"</h5><p class='pt-1 pl-3'>"+ contentType +"</p><button id="+ name +" type='button' class='delete' name='button' onclick='eraseContent(event)'><i class='fas fa-trash-alt'></i>Eliminar</button></div>";
-        
+
     }
-    
+
     html += "<button type='button' class='more4' onclick='loadModalCrearContenido()'>Nuevo Contenido</button>";
-    
+
     area.innerHTML = html;
-    
+
     document.getElementById("headNombreDelTema").innerHTML = cleanNameTema;
-    
+
 }
 
 function eraseContent(event){
-    
+
     console.log("Entra a eraseContent")
     console.log(event);
-    
+
     var contentName = event.path[0].id;
     var topic = document.getElementById("currentTema").value;
-    
+
     console.log(contentName);
     console.log(topic);
-    
+
     deleteDynamoDB('yoSiSaco10_contents', contentName, topic);
-    
+
 }
 
 function deleteDynamoDB(table, contentName, topic){
-    
+
     var dynamodb = new AWS.DynamoDB();
     var docClient = new AWS.DynamoDB.DocumentClient();
-    
+
     var params = {
     TableName: table,
     Key:{
@@ -1092,19 +1092,19 @@ function deleteDynamoDB(table, contentName, topic){
         "topic": topic
     }
 };
-    
+
     docClient.delete(params, function(err, data) {
-        
+
     if (err) {
         console.error("Unable to delete item. Error JSON:", JSON.stringify(err, null, 2));
     } else {
         console.log("DeleteItem succeeded!!!");
-        
+
         scan1('yoSiSaco10_contents', buildContent, function (){console.log("upsss Scan1");}, "topic = :topic", {":topic": {S: topic}});
-        
+
     }
 });
-    
+
 }
 
 function scan1(table, completionHandler, errorHandler, filters, values, names) {
@@ -1118,7 +1118,7 @@ function scan1(table, completionHandler, errorHandler, filters, values, names) {
             console.log(data);
             completionHandler(data.Items);
             console.log(data.LastEvaluatedKey);
-            
+
             if (data.LastEvaluatedKey != undefined) {
                 console.log("Scanning for more...");
                 parameters.ExclusiveStartKey = data.LastEvaluatedKey;
@@ -1127,131 +1127,131 @@ function scan1(table, completionHandler, errorHandler, filters, values, names) {
             else{
                 console.log("Nothing else to scan...");
             }
-        }   
+        }
     }
-    dynamodb.scan(parameters, onScan); 
-    
+    dynamodb.scan(parameters, onScan);
+
 }
 
 
 function buildUsersInfo(userNumber){
-    
+
     document.getElementById("userDisplayInfo").style.display = "block";
-    
+
     var userData = currentUsersData[userNumber];
-    
+
     console.log(userData);
-    
+
     if(userData.profilePic.S != "noProfilePic"){
-        
+
         var userPhoto = userData.profilePic.S;
         document.getElementById("displayUserPhoto").style.backgroundImage = "url("+ userPhoto +")";
-        
+
     } else{
-        
+
         document.getElementById("displayUserPhoto").style.backgroundImage = "";
-        
+
     }
-    
+
     document.getElementById("displayUserName").innerHTML = userData.name.S;
     document.getElementById("displayUserMail").innerHTML = userData.email.S;
     document.getElementById("displayUserGrade").innerHTML = userData.grade.S;
     document.getElementById("displayUserCountry").innerHTML = userData.country.S;
     document.getElementById("displayUserCity").innerHTML = userData.city.S;
     document.getElementById("displayUserSchool").innerHTML = userData.school.S;
-    
+
     document.getElementById("userAccessDisplay").innerHTML = "";
-    
+
     for(var i = 0; i < userData.userAccess.L.length; i++){
-        
-        document.getElementById("userAccessDisplay").innerHTML +="<li class='userAccessDisplay'>" + userData.userAccess.L[i].S.split('+').join(' ') + "</li>";
-        
+
+        document.getElementById("userAccessDisplay").innerHTML +="<li class=''>" + userData.userAccess.L[i].S.split('+').join(' ') + "</li>";
+
     }
-    
+
 }
 
 
 function selectContentDisplay(){
-    
+
     var checkbox = document.getElementById("todoCheck").checked;
-    
+
     if(checkbox == true){
-        
+
         document.getElementById("selectContentAccess").style.display = "none";
-        
+
     } else{
-        
+
         document.getElementById("selectContentAccess").style.display = "block";
-        
+
     }
-    
+
 }
 
 function buildUserAccess(data){
-    
+
     console.log(data);
-    
+
     var zone = document.getElementById("selectContentAccess");
     var html = "";
-    
+
     for(var i = 0; i < data.length; i++){
-        
+
      var subjectName = data[i].subjectName.S;
      var theFunction = "contentRestrictSelector('" + subjectName + "')";
-        
-     html += "<label><input type='checkbox' id='"+ data[i].subjectName.S +"' value='"+ data[i].subjectName.S +"' onclick=" + theFunction + ">"+ data[i].subjectName.S.split('+').join(' ') +"</label><br>";   
-        
-    } 
-    
+
+     html += "<label><input type='checkbox' id='"+ data[i].subjectName.S +"' value='"+ data[i].subjectName.S +"' onclick=" + theFunction + ">"+ data[i].subjectName.S.split('+').join(' ') +"</label><br>";
+
+    }
+
     zone.innerHTML = html;
 }
 
 function userTypeSelector(event){
-    
+
     var userType = event.path[0].innerHTML;
     console.log(userType);
-    
+
     if(userType == "Alumno"){
-       
+
        document.getElementById("selectAccessDiv").style.display = "block";
-       
+
        } else{
-           
+
            document.getElementById("selectAccessDiv").style.display = "none";
-           
+
            document.getElementById("currentUserCType").value = "userType";
-           
+
        }
-    
+
 }
 
 var currentUserCAccess = [];
 function contentRestrictSelector(id){
-    
+
     console.log(id);
     console.log(document.getElementById(id).checked);
-    
+
     if(document.getElementById(id).checked == true){
-        
+
         console.log(id);
-        
+
         currentUserCAccess.push(id);
-        
+
     }
-    
+
     if(document.getElementById(id).checked == false){
-        
+
         var index = currentUserCAccess.indexOf(id);
         if (index !== -1) {
             currentUserCAccess.splice(index, 1);
         }
-        
+
         console.log("se quita");
-        
+
     }
-    
+
     console.log(currentUserCAccess);
-    
+
 }
 
 
