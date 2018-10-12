@@ -4,7 +4,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
   <!--Scripts-->
   <script src="aws-sdk-2.108.0.min.js"></script>
   <script src="aws-cognito-sdk.min.js"></script>
@@ -12,7 +12,7 @@
   <script src="constants.js"></script>
   <script src="cognito.js"></script>
   <script src="index.js"></script>
-    
+
   <link rel="icon" href="favicon.ico" type="image/x-icon"/>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 
@@ -26,7 +26,7 @@
   <title>Yo Sí Saco 10</title>
 </head>
 <body>
-    
+
   <div class="container-fluid img">
     <div class="row justify-content-center align-items-center position-sticky">
       <div class="col-lg-5 col-12">
@@ -35,7 +35,7 @@
       </div>
       <div class="col-lg-5 col-12">
         <ul class="list-inline white">
-          <li class="list-inline-item pt-3">Información</li>
+          <li class="list-inline-item pt-3">¿Quienes somos?</li>
           <li class="list-inline-item pt-3 pl-2 pl-md-2 pl-lg-5">Contacto</li>
           <li class="list-inline-item pt-3 pl-2 pl-md-2 pl-lg-5">Iniciar sesión</li>
 
@@ -48,8 +48,32 @@
 
     <div class="row ml-3 ml-lg-5">
       <div class="b-info col-12 col-md-6 d-block">
-        <p class="white f-size">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio itaque, possimus, temporibus similique recusandae reiciendis voluptatum repellat sunt nemo inventore.</p>
-        <button class="more" type="button" name="button">Más Información</button>
+        <p class="white f-size pb-3">Con yo sí saco 10 cumplo mis sueños académicos.</p>
+        <div class="row">
+          <div class="col-lg-6 col-12 d-lg-flex d-block">
+            <ul class="white f-size">
+              <li> <a class="white hover f-size" href="#up" onclick="up();">UP</a> </li>
+            </ul>
+            <ul class="white f-size">
+              <li> <a class="white hover f-size" href="#varios" onclick="varios();">ITESM</a> </li>
+              <li> <a class="white hover f-size" href="#varios" onclick="varios();">ITAM</a> </li>
+              <li> <a class="white hover f-size" href="#varios" onclick="varios();">ANÁHUAC</a> </li>
+            </ul>
+
+            <ul class="white f-size">
+              <li> <a class="white hover f-size" href="#ibero" onclick="ibero();">IBERO</a> </li>
+              <li> <a class="white hover f-size" href="#colmex" onclick="colmex();">COLMEX</a> </li>
+            </ul>
+
+            <ul class="white f-size">
+              <li> <a class="white hover f-size" href="#salle" onclick="salle();">LA SALLE</a> </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+
       </div>
       <div class="col-12 col-lg-6">
         <img class="logo" src="logo.svg" alt="">
@@ -58,6 +82,224 @@
     </div>
 
   </div>
+
+  <div class="container" id="up">
+
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <img src="ceneval.svg" class="ceneval-logo" alt="">
+
+        <h1 class="info-title-m pt-5">EXANI-II</h1>
+        <h3 class="info-title pb-2">ADMISIÓN</h3>
+        <p class="info-text">Pensamiento matemático</p>
+        <p class="info-text">Pensamiento analítico</p>
+        <p class="info-text">Estructura de la lengua</p>
+        <p class="info-text">Comprensión lectora</p>
+
+        <h3 class="info-title pb-2">DIAGNÓSTICO</h3>
+        <p class="info-text">Área disciplinar 1</p>
+        <p class="info-text">Área disciplinar 2</p>
+        <p class="info-text">Inglés</p>
+        <p class="info-text">Lenguaje escrito</p>
+
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <img src="up.svg" class="up-logo" alt="">
+
+
+        <h3 class="info-title pb-2 pt-5"><span class="orange">Área I</span></h3>
+        <p class="info-text">Área disciplinar 1: <span class="orange">Física</span></p>
+        <p class="info-text">Área disciplinar 2: <span class="orange">Matemáticas</span> área 1</p>
+
+        <h3 class="info-title pb-2 pt-5"><span class="green">Área II</span></h3>
+        <p class="info-text">Área disciplinar 1: <span class="green">Química</span></p>
+        <p class="info-text">Área disciplinar 2: <span class="green">Biología</span></p>
+
+        <h3 class="info-title pb-2 pt-5"><span class="blue">Área III</span></h3>
+        <p class="info-text">Área disciplinar 1: <span class="blue">Historia de México, Historia Universal</span></p>
+        <p class="info-text">Área disciplinar 2: <span class="blue">Derecho</span></p>
+
+        <h3 class="info-title pb-2 pt-5"><span class="pink">Área IV</span></h3>
+        <p class="info-text">Área disciplinar 1: <span class="pink">Historia de México, Historia Universal</span></p>
+        <p class="info-text">Área disciplinar 2: <span class="pink">Literatura</span></p>
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+    <div class="row">
+
+      <div class="col-12 d-flex">
+        <img src="medidor.svg" class="medidor" alt="">
+
+        <p class="info-text pt-5 pl-2">El puntaje depende de la carrera y va de 700-1300 puntos</p>
+
+
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-12 col-lg-6">
+
+        <h3 class="info-title pb-2 pt-5"><span class="blue">Carreras UP por área</span></h3>
+        <p class="info-text">Ingenierías: Área I</p>
+        <p class="info-text">Administración y Gobierno: Área III</p>
+        <p class="info-text">Comunicación: Área IV</p>
+        <p class="info-text">Música e Innovación: Área IV</p>
+      </div>
+
+
+      <div class="col-12 col-lg-6">
+
+
+        <h3 class="info-title pb-2 pt-5"><span class="orange">Extras Diagnóstico UP</span></h3>
+        <p class="info-text">Medicina y enfermería: <span class="green">Anatomía, Química orgánica</span></p>
+        <p class="info-text">Piscología: <span class="blue">Psicología</span></p>
+
+
+
+
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <h3 class="info-title pb-2 pt-5"><span class="green">Particularidades UP</span></h3>
+        <p class="info-text"><span class="info-title">Medicina:</span> Área II y además: Biología UP, Química UP y Anatomía UP.</p>
+        <p class="info-text"><span class="info-title">Enfermería:</span> Área II y además: Biología UP, Química UP y Anatomía UP.</p>
+        <p class="info-text"><span class="info-title">Psicología:</span> Área II y además Psicología UP.</p>
+        <p class="info-text"><span class="info-title">Pedagogía:</span> Área II y además Estadística UP.</p>
+        <p class="info-text"><span class="info-title">Administración y Hospitalidad ESDAI:</span> Área II.</p>
+        <p class="info-text"><span class="info-title">Derecho:</span> Área III.</p>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div class="container" id="varios">
+    <div class="row">
+      <div class="col-12">
+        <img src="logos.svg" class="up-logo" alt="">
+        <img src="paa.svg" class="examenes-logo" alt="">
+
+
+        <h3 class="info-title pb-2 pt-5"><span class="orange">Lectura y Redacción:</span></h3>
+        <p class="info-text">Análisis de textos literarios</p>
+        <p class="info-text">Análisis de textos no literarios</p>
+        <p class="info-text">Vocabulario en contexto</p>
+        <p class="info-text">Análisis, interpretación e inferencias</p>
+
+        <h3 class="info-title pb-2 pt-5"><span class="green">Lectura y Redacción:</span></h3>
+        <p class="info-text">Aritmética</p>
+        <p class="info-text">Álgebra</p>
+        <p class="info-text">Geometría</p>
+        <p class="info-text">Análisis de datos y Probabilidad</p>
+
+        <h3 class="info-title pb-2 pt-5"><span class="blue">Inglés:</span></h3>
+        <p class="info-text">Lengua y vocabulario</p>
+        <p class="info-text">Lectura</p>
+        <p class="info-text">Redacción indirecta</p>
+
+        <p class="info-text pt-5">Escala de puntuaciones por partes 200 a 800 puntos</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container" id="ibero">
+    <div class="row">
+      <div class="col-12">
+        <img src="ibero.svg" class="ibero-logo" alt="">
+        <img src="excoba.svg" class="examenes-logo" alt="">
+
+
+        <h2 class="info-title pb-2 pt-5">Examen de competencias básicas:</h2>
+        <h3 class="info-title pb-2"><span class="blue">Examen de competencias básicas:</span></h3>
+        <p class="info-text">Matemáticas</p>
+        <p class="info-text">Español</p>
+        <p class="info-text">Civismo</p>
+        <p class="info-text">Biología</p>
+        <p class="info-text">Física</p>
+        <p class="info-text">Química</p>
+        <p class="info-text">Historia de México</p>
+        <p class="info-text">Historia Universal</p>
+        <p class="info-text">Geografía</p>
+
+
+
+
+        <p class="info-text pt-5">Asignaturas por área dependiendo de la carrera</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container" id="salle">
+    <div class="row">
+      <div class="col-12">
+        <img src="salle.svg" class="ibero-logo" alt="">
+
+
+        <h3 class="info-title pb-2"><span class="orange">Conocimientos generales:</span></h3>
+        <p class="info-text">Matemáticas</p>
+        <p class="info-text">Razonamiento matemático</p>
+        <p class="info-text">Español</p>
+        <p class="info-text">Razonamiento verbal</p>
+        <p class="info-text">Lectura de comprensión</p>
+        <p class="info-text">Historia de México</p>
+        <p class="info-text">Historia Universal</p>
+
+        <p class="info-text pt-5">Lectura y ensayo de 3 libros</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container" id="colmex">
+    <div class="row">
+      <div class="col-12">
+        <img src="colmex.svg" class="ibero-logo" alt="">
+
+
+        <h3 class="info-title pb-2"><span class="orange">Conocimientos generales:</span></h3>
+        <p class="info-text">Matemáticas</p>
+        <p class="info-text">Razonamiento matemático</p>
+        <p class="info-text">Español</p>
+        <p class="info-text">Razonamiento verbal</p>
+        <p class="info-text">Lectura de comprensión</p>
+        <p class="info-text">Historia de México</p>
+        <p class="info-text">Historia Universal</p>
+        <p class="info-text">Física</p>
+        <p class="info-text">Química</p>
+        <p class="info-text">Biología</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
 
   <div class="container-fluid">
     <div class="container">
@@ -92,14 +334,112 @@
 
   </div>
 
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="log2">¿Quiénes Somos?</h2>
+      </div>
+
+      <div class="col-12 d-flex">
+        <div class="card-info">
+          <div class="prev">
+            <div class="photo">
+              <div class="userpic">
+
+              </div>
+
+            </div>
+
+            <div class="name">
+              <h2>Elisa Reyes Rodríguez</h2>
+
+            </div>
+
+          </div>
+
+          <div class="all">
+            <p>Titulada en Química por la UNAM. Especializada en la enseñanza dematemáticas y ciencias. Profesora de Aprendes desde el año 2006.</p>
+            <p>Diplomado  en “Desarrollo e innovación educativa”, ITESM.</p>
+            <p>Autora de 3 libros de texto de matemáticas de bachilleratopara la editorial Santillana.Revisora técnica de traducciones de libros de texto de matemáticas.<br>Profesora de Matemáticas, Física y Química en elColegio Avante 2010-2017<br>Proesora de Física en el Instituto Canadiense Clarac 2014</p>
+
+          </div>
+
+        </div>
+
+        <div class="card-info2">
+          <div class="prev">
+            <div class="photo">
+              <div class="userpic">
+
+              </div>
+
+            </div>
+
+            <div class="name">
+              <h2>Elvia Reyes Rodríguez</h2>
+
+            </div>
+
+          </div>
+
+          <div class="all">
+            <p>Lic. en ciencias de la Comunicación por la UNAM. Cuenta con más de 30 años de experiencia en educación pública a nivel medio-superior y es directora deAprendes desde su fundación en 2005.</p>
+
+          </div>
+
+        </div>
+
+        <div class="card-info3">
+          <div class="prev">
+            <div class="photo">
+              <div class="userpic">
+
+              </div>
+
+            </div>
+
+            <div class="name">
+              <h2>Javier Barrera Corzo</h2>
+
+            </div>
+
+          </div>
+
+          <div class="all">
+            <p>Diplomado en Innovación Educativa ITESM</p>
+
+            <p>2008-2014 Coordinador Académico Preparatoria Universidad Panamericana</p>
+
+            <p>Control de grupo, captura de calificaciones, entrevistas con los Padres de Familia, y los
+                profesores del grupo.</p> <p>Elaboración de reportes a la Coordinación General y a la Dirección
+                Técnica.</p> <p>Cubrir las ausencias de profesores.</p> <p>Asesoría académica a alumnos de bajo desempeño.</p>
+                <p>Logros: Disminución de la deserción, trabajo conjunto con los Padres de Familia en los casos de bajo desempeño, disminución de los índices de reprobación. Empatía con los grupos a cargo. El enfoque fue con los grupos de 4o año y los del área III, por el perfil académico.</p>
+
+            <p>2014-2017 Colegio Avante Cargo: Director Técnico</p>
+
+            <p>Responsable del Departamento de Secundaria, encargado de los aspectos académico, docente, disciplinar y administrativo. Líder del proyecto del departamento de Secundaria del Colegio Avante.</p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
   <div class="container-fluid contact">
     <div class="container">
       <div class="row mb-5 mt-5 align-items-center">
         <div class="col-12 col-lg-6">
           <h2 class="contact-h1">Contacto</h2>
-          <p class="contact-p">+52 1 (55) 56441801</p>
-          <p class="contact-p">example@mail.com</p>
-          <p class="contact-p">04320, Moctezuma 108, Romero de Terreros, Ciudad de México, CDMX</p>
+          <p class="contact-p">Elisa Reyes Rodríguez</p>
+          <p class="contact-p">+52 1 (55) 1244-7777</p>
+          <p class="contact-p">elisareyes1@gmail.com</p>
 
         </div>
 
@@ -138,6 +478,95 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <script src="classie.js"></script>
+  <script>
+
+  function up() {
+
+    var up = document.getElementById("up");
+    var varios = document.getElementById("varios");
+    var ibero = document.getElementById("ibero");
+    var salle = document.getElementById("salle");
+    var colmex = document.getElementById("colmex");
+
+    up.style.display = "block"
+    varios.style.display = "none"
+    ibero.style.display = "none"
+    salle.style.display = "none"
+    colmex.style.display = "none"
+
+
+  }
+
+  function varios() {
+
+    var up = document.getElementById("up");
+    var varios = document.getElementById("varios");
+    var ibero = document.getElementById("ibero");
+    var salle = document.getElementById("salle");
+    var colmex = document.getElementById("colmex");
+
+    up.style.display = "none"
+    varios.style.display = "block"
+    ibero.style.display = "none"
+    salle.style.display = "none"
+    colmex.style.display = "none"
+
+
+  }
+
+  function ibero() {
+
+    var up = document.getElementById("up");
+    var varios = document.getElementById("varios");
+    var ibero = document.getElementById("ibero");
+    var salle = document.getElementById("salle");
+    var colmex = document.getElementById("colmex");
+
+    up.style.display = "none"
+    varios.style.display = "none"
+    ibero.style.display = "block"
+    salle.style.display = "none"
+    colmex.style.display = "none"
+
+
+  }
+
+  function salle() {
+
+    var up = document.getElementById("up");
+    var varios = document.getElementById("varios");
+    var ibero = document.getElementById("ibero");
+    var salle = document.getElementById("salle");
+    var colmex = document.getElementById("colmex");
+
+    up.style.display = "none"
+    varios.style.display = "none"
+    ibero.style.display = "none"
+    salle.style.display = "block"
+    colmex.style.display = "none"
+
+
+  }
+
+  function colmex() {
+
+    var up = document.getElementById("up");
+    var varios = document.getElementById("varios");
+    var ibero = document.getElementById("ibero");
+    var salle = document.getElementById("salle");
+    var colmex = document.getElementById("colmex");
+
+    up.style.display = "none"
+    varios.style.display = "none"
+    ibero.style.display = "none"
+    salle.style.display = "none"
+    colmex.style.display = "block"
+
+
+  }
+
+
+  </script>
   <script>
     (function() {
       // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
