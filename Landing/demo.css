@@ -26,11 +26,10 @@ body {
 a {
 	text-decoration: none !important;
 	outline: none;
+	cursor: pointer;
 }
 
-a:hover, a:focus {
-	color: #404d5b;
-}
+
 
 .container {
 	margin: 0 auto;
