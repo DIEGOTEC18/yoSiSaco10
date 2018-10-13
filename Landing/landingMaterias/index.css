@@ -128,17 +128,17 @@
 }
 
 #blueStuff{
-    
+
     height: 100%;
-    
+
 }
 
 .headerNav{
-    
+
     font-size: 2em;
     margin-bottom: 2em;
     margin-top: 1em;
-    
+
 }
 
 .noContentDiv{
@@ -158,4 +158,13 @@
 .noContentTitle{
     color: darkgrey;
     text-align: center;
+}
+
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
 }
