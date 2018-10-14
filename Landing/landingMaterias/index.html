@@ -36,7 +36,7 @@
   <div class="container-fluid img" id="blueStuff">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">
-    <img src="logo.svg" width="100" height="60" alt="">
+    <img src="logo-white.svg" width="100" height="60" alt="">
   </a>
     <a class="navbar-brand more white" href="#">Yo sí saco 10</a>
     <button class="navbar-toggler white2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,14 +46,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link white" href="#" onclick="loadInicio()">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link white" target="_blank" href="https://yosisaco10.com/" onclick="loadInicio()">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link white" href="#" onclick="loadMaterias()">Materias</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link white" onclick="loadContacto()">Contacto</a>
+          <a target="_blank" href="https://yosisaco10.com/#contacto" class="nav-link white" onclick="loadContacto()">Contacto</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -62,7 +62,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item nav-link disabled pl-2" onclick="loadMaterias()">Mis Materias</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" onclick="loadContacto()">Ayuda</a>
+            <a href="mailto:elisareyes1@gmail.com" class="dropdown-item" onclick="loadContacto()">Ayuda</a>
           </div>
         </li>
       </ul>
