@@ -35,8 +35,8 @@
       </div>
       <div class="col-lg-5 col-12">
         <ul class="list-inline white">
-        <a href="#quienes"> <li class="list-inline-item pt-3 pl-2 pl-md-2 pl-lg-5 white hover" >¿Quienes somos?</li></a>
-          <a href="#contacto"><li class="list-inline-item pt-3 pl-2 pl-md-2 pl-lg-5 white hover">Contacto</li></a>
+        <a href="#quienes" onclick="info();"> <li class="list-inline-item pt-3 pl-2 pl-md-2 pl-lg-5 white hover" >¿Quienes somos?</li></a>
+          <a href="#contacto" onclick="contacto();"><li class="list-inline-item pt-3 pl-2 pl-md-2 pl-lg-5 white hover">Contacto</li></a>
           <li class="list-inline-item pt-3 pl-2 pl-md-2 pl-lg-5">Galería</li>
           <li class="list-inline-item pt-3 pl-2 pl-md-2 pl-lg-5">Testimonios</li>
 
@@ -360,9 +360,9 @@
           </div>
 
           <div class="all">
-            <p>Titulada en Química por la UNAM. Especializada en la enseñanza dematemáticas y ciencias. Profesora de Aprendes desde el año 2006.</p>
+            <p>Titulada en Química por la UNAM. Especializada en la enseñanza de matemáticas y ciencias. Profesora de Aprendes desde el año 2006.</p>
             <p>Diplomado  en “Desarrollo e innovación educativa”, ITESM.</p>
-            <p>Autora de 3 libros de texto de matemáticas de bachilleratopara la editorial Santillana.Revisora técnica de traducciones de libros de texto de matemáticas.<br>Profesora de Matemáticas, Física y Química en elColegio Avante 2010-2017<br>Proesora de Física en el Instituto Canadiense Clarac 2014</p>
+            <p>Autora de 3 libros de texto de matemáticas de bachilleratopara la editorial Santillana. Revisora técnica de traducciones de libros de texto de matemáticas.<br>Profesora de Matemáticas, Física y Química en el Colegio Avante 2010-2017.<br>Proesora de Física en el Instituto Canadiense Clarac 2014.</p>
 
           </div>
 
@@ -385,7 +385,7 @@
           </div>
 
           <div class="all">
-            <p>Lic. en ciencias de la Comunicación por la UNAM. Cuenta con más de 30 años de experiencia en educación pública a nivel medio-superior y es directora deAprendes desde su fundación en 2005.</p>
+            <p>Lic. en ciencias de la Comunicación por la UNAM. Cuenta con más de 30 años de experiencia en educación pública a nivel medio-superior y es directora de Aprendes desde su fundación en 2005.</p>
 
           </div>
 
@@ -408,9 +408,9 @@
           </div>
 
           <div class="all">
-            <p>Diplomado en Innovación Educativa ITESM</p>
+            <p>Diplomado en Innovación Educativa ITESM.</p>
 
-            <p>2008-2014 Coordinador Académico Preparatoria Universidad Panamericana</p>
+            <p>2008-2014 Coordinador Académico Preparatoria Universidad Panamericana.</p>
 
             <p>Control de grupo, captura de calificaciones, entrevistas con los Padres de Familia, y los
                 profesores del grupo.</p> <p>Elaboración de reportes a la Coordinación General y a la Dirección
@@ -488,12 +488,17 @@
     var ibero = document.getElementById("ibero");
     var salle = document.getElementById("salle");
     var colmex = document.getElementById("colmex");
+    var info = document.getElementById("quienes");
+    var contacto = document.getElementById("contacto");
+
 
     up.style.display = "block"
     varios.style.display = "none"
     ibero.style.display = "none"
     salle.style.display = "none"
     colmex.style.display = "none"
+    info.style.display = "none"
+    contacto.style.display = "none"
 
 
   }
@@ -505,12 +510,17 @@
     var ibero = document.getElementById("ibero");
     var salle = document.getElementById("salle");
     var colmex = document.getElementById("colmex");
+    var info = document.getElementById("quienes");
+    var contacto = document.getElementById("contacto");
+
 
     up.style.display = "none"
     varios.style.display = "block"
     ibero.style.display = "none"
     salle.style.display = "none"
     colmex.style.display = "none"
+    info.style.display = "none"
+    contacto.style.display = "none"
 
 
   }
@@ -522,12 +532,17 @@
     var ibero = document.getElementById("ibero");
     var salle = document.getElementById("salle");
     var colmex = document.getElementById("colmex");
+    var info = document.getElementById("quienes");
+    var contacto = document.getElementById("contacto");
+
 
     up.style.display = "none"
     varios.style.display = "none"
     ibero.style.display = "block"
     salle.style.display = "none"
     colmex.style.display = "none"
+    info.style.display = "none"
+    contacto.style.display = "none"
 
 
   }
@@ -539,12 +554,17 @@
     var ibero = document.getElementById("ibero");
     var salle = document.getElementById("salle");
     var colmex = document.getElementById("colmex");
+    var info = document.getElementById("quienes");
+    var contacto = document.getElementById("contacto");
+
 
     up.style.display = "none"
     varios.style.display = "none"
     ibero.style.display = "none"
     salle.style.display = "block"
     colmex.style.display = "none"
+    info.style.display = "none"
+    contacto.style.display = "none"
 
 
   }
@@ -556,12 +576,65 @@
     var ibero = document.getElementById("ibero");
     var salle = document.getElementById("salle");
     var colmex = document.getElementById("colmex");
+    var info = document.getElementById("quienes");
+    var contacto = document.getElementById("contacto");
+
 
     up.style.display = "none"
     varios.style.display = "none"
     ibero.style.display = "none"
     salle.style.display = "none"
     colmex.style.display = "block"
+    info.style.display = "none"
+    contacto.style.display = "none"
+
+
+  }
+
+
+  function info() {
+
+    console.log("si jala")
+
+    var up = document.getElementById("up");
+    var varios = document.getElementById("varios");
+    var ibero = document.getElementById("ibero");
+    var salle = document.getElementById("salle");
+    var colmex = document.getElementById("colmex");
+    var info = document.getElementById("quienes");
+    var contacto = document.getElementById("contacto");
+
+    up.style.display = "none"
+    varios.style.display = "none"
+    ibero.style.display = "none"
+    salle.style.display = "none"
+    colmex.style.display = "none"
+    info.style.display = "block"
+    contacto.style.display = "none"
+
+
+  }
+
+
+  function contacto() {
+
+    console.log("si jala")
+
+    var up = document.getElementById("up");
+    var varios = document.getElementById("varios");
+    var ibero = document.getElementById("ibero");
+    var salle = document.getElementById("salle");
+    var colmex = document.getElementById("colmex");
+    var info = document.getElementById("quienes");
+    var contacto = document.getElementById("contacto");
+
+    up.style.display = "none"
+    varios.style.display = "none"
+    ibero.style.display = "none"
+    salle.style.display = "none"
+    colmex.style.display = "none"
+    info.style.display = "none"
+    contacto.style.display = "block"
 
 
   }

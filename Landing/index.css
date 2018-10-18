@@ -435,3 +435,12 @@ a {
   border-radius: 50px;
   background-color: deepskyblue;
 }
+
+#quienes {
+  display: none;
+}
+
+
+#contacto {
+  display: none;
+}
