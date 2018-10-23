@@ -145,8 +145,8 @@ function loadMaterias(){
                 var currentUserAccess = currentAccess[i];
                 console.log(currentUserAccess);
 
-                variables[":" + currentUserAccess.split('+').join('')] = {S: currentUserAccess};
-                filterExpression += ":" + currentUserAccess.split('+').join('');
+                variables[":" + currentUserAccess.split('+').join('').normalize('NFD').replace(/[\u0300-\u036f]/g,"")] = {S: currentUserAccess};
+                filterExpression += ":" + currentUserAccess.split('+').join('').normalize('NFD').replace(/[\u0300-\u036f]/g,"");
 
                 if (i < (currentAccess.length - 1)) {
                     filterExpression += ", ";
@@ -248,7 +248,7 @@ function userBuilder(data){
 
     }
 
-    document.getElementById("userHello").innerHTML = "¡Hola, " + userName + "!";
+    document.getElementById("userHello").innerHTML = "¡Hola " + userName + "!";
 
 }
 
@@ -550,8 +550,23 @@ function renderContent(contentLocation){
         case "pdf":
 
             var content = renderData.content.S;
-            renderZone.innerHTML += "<embed class='contentPDF' src='"+ content +"#toolbar=0' width='900' height='700'>";
+            renderZone.innerHTML += "<embed class='contentPDF' id='pdfZoner' src='"+ content +"#toolbar=0' width='900' height='700' style='pointer-events: none;' oncontextmenu='return false;'>";
+            console.log(document.getElementById("pdfZoner"));
+            console.log(document.getElementById("pdfZoner").firstChild);
+            
+            /*
+            var xObj = document.getElementById('pdfZoner');
 
+            for (var p in xObj) {
+                var value = null;
+                    try {
+                        value = xObj[p];
+                      } catch (err) {}
+
+                      if (value)
+                        console.log(p, value);
+                    }
+            */
             break;
 
         case "text":
@@ -562,5 +577,93 @@ function renderContent(contentLocation){
             break;
 
     }
+    
+}
+
+/* Desplegar examenes */
+
+
+function up() {
+
+  var up = document.getElementById("up");
+  var varios = document.getElementById("varios");
+  var ibero = document.getElementById("ibero");
+  var salle = document.getElementById("salle");
+  var colmex = document.getElementById("colmex");
+
+  up.style.display = "block";
+  varios.style.display = "none";
+  ibero.style.display = "none";
+  salle.style.display = "none";
+  colmex.style.display = "none";
+
+
+}
+
+function varios() {
+
+  var up = document.getElementById("up");
+  var varios = document.getElementById("varios");
+  var ibero = document.getElementById("ibero");
+  var salle = document.getElementById("salle");
+  var colmex = document.getElementById("colmex");
+
+  up.style.display = "none";
+  varios.style.display = "block";
+  ibero.style.display = "none";
+  salle.style.display = "none";
+  colmex.style.display = "none";
+
+
+}
+
+function ibero() {
+
+  var up = document.getElementById("up");
+  var varios = document.getElementById("varios");
+  var ibero = document.getElementById("ibero");
+  var salle = document.getElementById("salle");
+  var colmex = document.getElementById("colmex");
+
+  up.style.display = "none";
+  varios.style.display = "none";
+  ibero.style.display = "block";
+  salle.style.display = "none";
+  colmex.style.display = "none";
+
+
+}
+
+function salle() {
+
+  var up = document.getElementById("up");
+  var varios = document.getElementById("varios");
+  var ibero = document.getElementById("ibero");
+  var salle = document.getElementById("salle");
+  var colmex = document.getElementById("colmex");
+
+  up.style.display = "none";
+  varios.style.display = "none";
+  ibero.style.display = "none";
+  salle.style.display = "block";
+  colmex.style.display = "none";
+
+
+}
+
+function colmex() {
+
+  var up = document.getElementById("up");
+  var varios = document.getElementById("varios");
+  var ibero = document.getElementById("ibero");
+  var salle = document.getElementById("salle");
+  var colmex = document.getElementById("colmex");
+
+  up.style.display = "none";
+  varios.style.display = "none";
+  ibero.style.display = "none";
+  salle.style.display = "none";
+  colmex.style.display = "block";
+
 
 }
