@@ -1,2 +1,2 @@
 # yoSiSaco10
-Plataforma de educación privada.
+A WEB education platform that allows teachers to create personalized courses with interactive content.
